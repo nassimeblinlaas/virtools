@@ -1,0 +1,17 @@
+#include <iostream>
+#include <gepetto/fff/macros.h>
+
+namespace fff{
+
+DEF_CLASS_SMART_PTR(Fff)
+
+	class Fff {
+public:
+		Fff();
+		
+		void fonc();
+
+	};
+
+	
+}

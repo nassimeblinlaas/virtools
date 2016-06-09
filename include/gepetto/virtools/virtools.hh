@@ -1,0 +1,25 @@
+//#ifndef virtools
+//#define virtools
+
+#include <iostream>
+#include <gepetto/virtools/macros.h>
+
+namespace virtools{
+
+	DEF_CLASS_SMART_PTR(Virtools)
+
+	class Virtools {
+		public:
+		Virtools(){
+			std::cout << "constructeur de virtools\n";
+		};
+		
+		void fonc();
+
+	};
+
+	
+}
+
+
+//#endif
