@@ -5,9 +5,6 @@ ADD_LIBRARY(${LIBRARY_NAME}
 	virtools.cc
   )
 
-PKG_CONFIG_USE_DEPENDENCY(${LIBRARY_NAME} hpp-core)
-PKG_CONFIG_USE_DEPENDENCY(${LIBRARY_NAME} hpp-corbaserver)
-#PKG_CONFIG_USE_DEPENDENCY(${LIBRARY_NAME} virtools-corba)
 
 # Create and install executable running the corba server
 ADD_EXECUTABLE (virtoolsexe

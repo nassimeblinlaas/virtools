@@ -1,19 +1,6 @@
 
 
 
-#include <hpp/util/pointer.hh>
-#include <hpp/core/basic-configuration-shooter.hh>
-#include <hpp/core/config-validations.hh>
-#include <hpp/core/connected-component.hh>
-#include <hpp/core/constraint-set.hh>
-#include <hpp/core/path-planner.hh>
-#include <hpp/core/path-validation.hh>
-#include <hpp/core/problem-solver.hh>
-#include <hpp/core/roadmap.hh>
-#include <hpp/core/steering-method.hh>
-#include <hpp/corbaserver/server.hh>
-#include <hpp/core/fwd.hh>
-#include <hpp/core/distance-between-objects.hh>
 #include <iostream>
 
 #include "gepetto/virtools/virtools.hh"

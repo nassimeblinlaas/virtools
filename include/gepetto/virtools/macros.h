@@ -11,7 +11,6 @@
 
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
-#include <osg/ref_ptr>
 
 /** Define default asserting macro */
 #define ASSERT(condition, message) \

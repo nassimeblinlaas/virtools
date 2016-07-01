@@ -1,33 +1,33 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
-
-SET(CXX_DISABLE_WERROR TRUE)
-INCLUDE(cmake/base.cmake)
-
-SET(PROJECT_NAME virtools)
-SET(PROJECT_DESCRIPTION
-	"virtools path planning")
-SET(PROJECT_URL "")
-
-SET(${PROJECT_NAME}_HEADERS
-  include/gepetto/virtools/virtools.hh
-  include/gepetto/virtools/macros.h
-)
-
-# Activate hpp-util logging if requested
-SET (HPP_DEBUG FALSE CACHE BOOL "trigger hpp-util debug output")
-IF (HPP_DEBUG)
-  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DHPP_DEBUG")
-ENDIF()
-
-SETUP_PROJECT()
-ADD_REQUIRED_DEPENDENCY("hpp-core")
-ADD_REQUIRED_DEPENDENCY("hpp-corbaserver >= 3")
-ADD_REQUIRED_DEPENDENCY("hpp-model")
+cmake_minimum_required( VERSION 2.6 )
 
 
+SET(CMAKE_SYSTEM_NAME Windows)
 
-PKG_CONFIG_APPEND_LIBS(${PROJECT_NAME})
+SET(CMAKE_C_COMPILER /usr/bin/i586-mingw32msvc-gcc)
+SET(CMAKE_CXX_COMPILER /usr/bin/i586-mingw32msvc-g++)
+SET(CMAKE_RC_COMPILER i586-mingw32msvc-windres)
+
+SET(CMAKE_FIND_ROOT_PATH /usr/i586-mingw32msvc/)
+
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+
+project (VirtExec)
+
+
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build/bin)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+
+include_directories(include ${BOOST_INCLUDE_DIRS})
+set(Boost_LIBRARY_DIRS "/usr/lib/")
+set(Boost_INCLUDE_DIR "/usr/include/")
+
+find_package( Boost 1.46.1)# COMPONENTS date_time REQUIRED)
+
+link_directories ( ${Boost_LIBRARY_DIRS} )
+
+include_directories ( ${Boost_INCLUDE_DIRS} )
+
 ADD_SUBDIRECTORY (src)
-#ADD_SUBDIRECTORY (tests)
-
-SETUP_PROJECT_FINALIZE()
